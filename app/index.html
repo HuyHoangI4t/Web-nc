@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Spending</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-wallet"></i>
+            </div>
+            <div class="loading-text">Smart Spending</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="page">
+        <header class="landing-header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <i class="fas fa-wallet"></i>
+                    <span>Smart Spending</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#features" class="nav-link">Tính năng</a>
+                    <a href="#pricing" class="nav-link">Gói dịch vụ</a>
+                    <a href="#contact" class="nav-link">Liên hệ</a>
+                    <button class="btn btn-outline" onclick="showLogin()">Đăng nhập</button>
+                    <button class="btn btn-primary" onclick="showRegister()">Đăng ký</button>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </header>
+
+        <main class="landing-main">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Quản lý tài chính cá nhân thông minh</h1>
+                    <p class="hero-subtitle">Theo dõi chi tiêu, lập ngân sách và đạt được mục tiêu tài chính với công cụ
+                        AI tiên tiến</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" onclick="showRegister()">
+                            <i class="fas fa-rocket"></i>
+                            Bắt đầu miễn phí
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="showDemo()">
+                            <i class="fas fa-play"></i>
+                            Xem demo
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="dashboard-preview">
+                        <div class="preview-card">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <div class="preview-content">
+                                <div class="preview-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">2.5M</span>
+                                        <span class="stat-label">Tổng chi tiêu</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">85%</span>
+                                        <span class="stat-label">Ngân sách</span>
+                                    </div>
+                                </div>
+                                <div class="preview-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <div class="container">
+                    <h2 class="section-title">Tính năng nổi bật</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Theo dõi chi tiêu thông minh</h3>
+                            <p>AI phân tích và phân loại giao dịch tự động, giúp bạn hiểu rõ thói quen chi tiêu</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <h3>Lập ngân sách linh hoạt</h3>
+                            <p>Tạo ngân sách theo danh mục với cảnh báo thông minh khi vượt mức</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Liên kết ngân hàng</h3>
+                            <p>Đồng bộ tự động với 50+ ngân hàng Việt Nam, bảo mật cấp ngân hàng</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3>Báo cáo chi tiết</h3>
+                            <p>Biểu đồ trực quan, phân tích xu hướng và dự báo tài chính</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <h3>Mục tiêu tài chính</h3>
+                            <p>Đặt và theo dõi mục tiêu tiết kiệm với lộ trình cụ thể</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Bảo mật tuyệt đối</h3>
+                            <p>Mã hóa AES-256, xác thực 2FA và tuân thủ chuẩn PCI DSS</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="landing-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="nav-brand">
+                            <i class="fas fa-wallet"></i>
+                            <span>Smart Spending</span>
+                        </div>
+                        <p>Giải pháp quản lý tài chính cá nhân hàng đầu Việt Nam</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Sản phẩm</h4>
+                            <a href="#">Tính năng</a>
+                            <a href="#">Gói dịch vụ</a>
+                            <a href="#">API</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Hỗ trợ</h4>
+                            <a href="#">Trung tâm trợ giúp</a>
+                            <a href="#">Liên hệ</a>
+                            <a href="#">Báo lỗi</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Pháp lý</h4>
+                            <a href="#">Điều khoản</a>
+                            <a href="#">Bảo mật</a>
+                            <a href="#">Cookie</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 FinanceManager Pro. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="page">
+        <div class="dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-brand">
+                        <i class="fas fa-wallet"></i>
+                        <span class="brand-text">Smart Spending</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <div class="nav-section-title">Tổng quan</div>
+                        <a href="#" class="nav-item active" data-page="overview">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="transactions">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>Giao dịch</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="budget">
+                            <i class="fas fa-piggy-bank"></i>
+                            <span>Ngân sách</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Phân tích</div>
+                        <a href="#" class="nav-item" data-page="reports">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Báo cáo</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="insights">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Thông tin chi tiết</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Tài khoản</div>
+                        <a href="#" class="nav-item" data-page="banks">
+                            <i class="fas fa-university"></i>
+                            <span>Ngân hàng</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">Cài đặt</div>
+                        <a href="#" class="nav-item" data-page="profile">
+                            <i class="fas fa-user"></i>
+                            <span>Hồ sơ</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span>Thông báo</span>
+                        </a>
+                        <a href="#" class="nav-item" data-page="security">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Bảo mật</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-name">Nguyễn Văn A</div>
+                            <div class="user-email">user@example.com</div>
+                        </div>
+                        <button class="user-menu-btn" onclick="toggleUserMenu()">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                    <div class="user-menu" id="user-menu">
+                        <a href="#" onclick="showProfile()">
+                            <i class="fas fa-user"></i>
+                            Hồ sơ
+                        </a>
+                        <a href="#" onclick="showSettings()">
+                            <i class="fas fa-cog"></i>
+                            Cài đặt
+                        </a>
+                        <a href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <header class="main-header">
+                    <div class="header-left">
+                        <button class="mobile-sidebar-toggle" onclick="toggleSidebar()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h1 class="page-title" id="page-title">Dashboard</h1>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Tìm kiếm giao dịch...">
+                        </div>
+                        <button class="header-btn" onclick="showNotifications()">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <button class="header-btn" onclick="showQuickAdd()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="header-profile">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile"
+                                class="profile-avatar">
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Content Sections -->
+                <div class="content-container">
+                    <!-- Overview Section -->
+                    <section id="overview" class="content-section active">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon income">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-label">Thu nhập tháng này</div>
+                                    <div class="stat-value">25,500,000 ₫</div>
+                                    <div class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +12.5%
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon expense">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-label">Chi tiêu tháng này</div>
+                                    <div class="stat-value">18,750,000 ₫</div>
+                                    <div class="stat-change negative">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +8.3%
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon savings">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-label">Tiết kiệm</div>
+                                    <div class="stat-value">6,750,000 ₫</div>
+                                    <div class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                        +15.2%
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon budget">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-label">Ngân sách còn lại</div>
+                                    <div class="stat-value">4,250,000 ₫</div>
+                                    <div class="stat-change neutral">
+                                        <i class="fas fa-minus"></i>
+                                        0%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-grid">
+                            <div class="dashboard-card chart-card">
+                                <div class="card-header">
+                                    <h3>Xu hướng chi tiêu</h3>
+                                    <div class="card-actions">
+                                        <select class="period-select">
+                                            <option value="7d">7 ngày</option>
+                                            <option value="30d" selected>30 ngày</option>
+                                            <option value="90d">90 ngày</option>
+                                            <option value="1y">1 năm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="spendingTrendChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Chi tiêu theo danh mục</h3>
+                                    <button class="btn btn-sm btn-outline" onclick="showAllCategories()">
+                                        Xem tất cả
+                                    </button>
+                                </div>
+                                <div class="category-list">
+                                    <div class="category-item">
+                                        <div class="category-info">
+                                            <div class="category-icon food">
+                                                <i class="fas fa-utensils"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <div class="category-name">Ăn uống</div>
+                                                <div class="category-amount">5,250,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 75%"></div>
+                                            </div>
+                                            <div class="progress-text">75%</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="category-item">
+                                        <div class="category-info">
+                                            <div class="category-icon transport">
+                                                <i class="fas fa-car"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <div class="category-name">Đi lại</div>
+                                                <div class="category-amount">3,800,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 63%"></div>
+                                            </div>
+                                            <div class="progress-text">63%</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="category-item">
+                                        <div class="category-info">
+                                            <div class="category-icon entertainment">
+                                                <i class="fas fa-gamepad"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <div class="category-name">Giải trí</div>
+                                                <div class="category-amount">2,150,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 43%"></div>
+                                            </div>
+                                            <div class="progress-text">43%</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="category-item">
+                                        <div class="category-info">
+                                            <div class="category-icon shopping">
+                                                <i class="fas fa-shopping-bag"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <div class="category-name">Mua sắm</div>
+                                                <div class="category-amount">4,200,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="category-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill warning" style="width: 84%"></div>
+                                            </div>
+                                            <div class="progress-text warning">84%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Giao dịch gần đây</h3>
+                                    <button class="btn btn-sm btn-outline" onclick="showAllTransactions()">
+                                        Xem tất cả
+                                    </button>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon expense">
+                                            <i class="fas fa-coffee"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Starbucks Coffee</div>
+                                            <div class="transaction-meta">
+                                                <span class="transaction-category">Ăn uống</span>
+                                                <span class="transaction-date">Hôm nay, 14:30</span>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount expense">-125,000 ₫</div>
+                                    </div>
+
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon expense">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Xăng Petrolimex</div>
+                                            <div class="transaction-meta">
+                                                <span class="transaction-category">Đi lại</span>
+                                                <span class="transaction-date">Hôm qua, 08:15</span>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount expense">-350,000 ₫</div>
+                                    </div>
+
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon income">
+                                            <i class="fas fa-building"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Lương tháng 11</div>
+                                            <div class="transaction-meta">
+                                                <span class="transaction-category">Thu nhập</span>
+                                                <span class="transaction-date">01/11/2024</span>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount income">+25,000,000 ₫</div>
+                                    </div>
+
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon expense">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-title">Siêu thị Lotte</div>
+                                            <div class="transaction-meta">
+                                                <span class="transaction-category">Mua sắm</span>
+                                                <span class="transaction-date">30/10/2024</span>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-amount expense">-850,000 ₫</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="card-header">
+                                    <h3>Mục tiêu tài chính</h3>
+                                    <button class="btn btn-sm btn-primary" onclick="showAddGoal()">
+                                        <i class="fas fa-plus"></i>
+                                        Thêm mục tiêu
+                                    </button>
+                                </div>
+                                <div class="goals-list">
+                                    <div class="goal-item">
+                                        <div class="goal-info">
+                                            <div class="goal-icon">
+                                                <i class="fas fa-car"></i>
+                                            </div>
+                                            <div class="goal-details">
+                                                <div class="goal-name">Mua xe ô tô</div>
+                                                <div class="goal-target">500,000,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="goal-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 35%"></div>
+                                            </div>
+                                            <div class="goal-amount">175,000,000 ₫ / 500,000,000 ₫</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="goal-item">
+                                        <div class="goal-info">
+                                            <div class="goal-icon">
+                                                <i class="fas fa-home"></i>
+                                            </div>
+                                            <div class="goal-details">
+                                                <div class="goal-name">Mua nhà</div>
+                                                <div class="goal-target">2,000,000,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="goal-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 15%"></div>
+                                            </div>
+                                            <div class="goal-amount">300,000,000 ₫ / 2,000,000,000 ₫</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Other sections will be loaded dynamically -->
+                    <section id="transactions" class="content-section">
+                        <div class="section-header">
+                            <h2>Quản lý giao dịch</h2>
+                            <div class="section-actions">
+                                <div class="search-filter">
+                                    <input type="text" placeholder="Tìm kiếm giao dịch..." class="search-input">
+                                    <select class="filter-select">
+                                        <option value="">Tất cả danh mục</option>
+                                        <option value="food">Ăn uống</option>
+                                        <option value="transport">Đi lại</option>
+                                        <option value="entertainment">Giải trí</option>
+                                        <option value="shopping">Mua sắm</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" onclick="showAddTransaction()">
+                                    <i class="fas fa-plus"></i>
+                                    Thêm giao dịch
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="transactions-container">
+                            <div class="transactions-filters">
+                                <div class="filter-tabs">
+                                    <button class="filter-tab active" data-filter="all">Tất cả</button>
+                                    <button class="filter-tab" data-filter="expense">Chi tiêu</button>
+                                    <button class="filter-tab" data-filter="income">Thu nhập</button>
+                                </div>
+                                <div class="date-range">
+                                    <input type="date" id="date-from" class="date-input">
+                                    <span>đến</span>
+                                    <input type="date" id="date-to" class="date-input">
+                                </div>
+                            </div>
+
+                            <div class="transactions-table-container">
+                                <table class="transactions-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Ngày</th>
+                                            <th>Mô tả</th>
+                                            <th>Danh mục</th>
+                                            <th>Số tiền</th>
+                                            <th>Tài khoản</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="transactions-tbody">
+                                        <!-- Transactions will be loaded here -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="pagination">
+                                <button class="btn btn-outline btn-sm" onclick="previousPage()">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="page-info">Trang 1 / 5</span>
+                                <button class="btn btn-outline btn-sm" onclick="nextPage()">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="budget" class="content-section">
+                        <div class="section-header">
+                            <h2>Quản lý ngân sách</h2>
+                            <button class="btn btn-primary" onclick="showAddBudget()">
+                                <i class="fas fa-plus"></i>
+                                Tạo ngân sách
+                            </button>
+                        </div>
+
+                        <div class="budget-overview">
+                            <div class="budget-summary">
+                                <div class="budget-card total">
+                                    <div class="budget-icon">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                    <div class="budget-info">
+                                        <div class="budget-label">Tổng ngân sách</div>
+                                        <div class="budget-amount">23,000,000 ₫</div>
+                                        <div class="budget-period">Tháng 11/2024</div>
+                                    </div>
+                                </div>
+
+                                <div class="budget-card spent">
+                                    <div class="budget-icon">
+                                        <i class="fas fa-arrow-down"></i>
+                                    </div>
+                                    <div class="budget-info">
+                                        <div class="budget-label">Đã chi tiêu</div>
+                                        <div class="budget-amount">18,750,000 ₫</div>
+                                        <div class="budget-progress">81.5% ngân sách</div>
+                                    </div>
+                                </div>
+
+                                <div class="budget-card remaining">
+                                    <div class="budget-icon">
+                                        <i class="fas fa-piggy-bank"></i>
+                                    </div>
+                                    <div class="budget-info">
+                                        <div class="budget-label">Còn lại</div>
+                                        <div class="budget-amount">4,250,000 ₫</div>
+                                        <div class="budget-days">15 ngày còn lại</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="budget-categories">
+                            <h3>Ngân sách theo danh mục</h3>
+                            <div class="budget-list">
+                                <div class="budget-item">
+                                    <div class="budget-header">
+                                        <div class="budget-category">
+                                            <div class="category-icon food">
+                                                <i class="fas fa-utensils"></i>
+                                            </div>
+                                            <div class="category-info">
+                                                <div class="category-name">Ăn uống</div>
+                                                <div class="category-budget">7,000,000 ₫</div>
+                                            </div>
+                                        </div>
+                                        <div class="budget-actions">
+                                            <button class="btn-icon" onclick="editBudget('food')">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon delete" onclick="deleteBudget('food')">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="budget-progress-container">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill warning" style="width: 75%"></div>
+                                        </div>
+                                        <div class="budget-details">
+                                            <span class="spent-amount">5,250,000 ₫</span>
+                                            <span class="budget-percentage warning">75%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- More budget items... -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="reports" class="content-section">
+                        <div class="section-header">
+                            <h2>Báo cáo tài chính</h2>
+                            <div class="report-actions">
+                                <select class="period-select">
+                                    <option value="this-month">Tháng này</option>
+                                    <option value="last-month">Tháng trước</option>
+                                    <option value="this-quarter">Quý này</option>
+                                    <option value="this-year">Năm này</option>
+                                </select>
+                                <button class="btn btn-outline" onclick="exportReport()">
+                                    <i class="fas fa-download"></i>
+                                    Xuất báo cáo
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="reports-grid">
+                            <div class="report-card">
+                                <div class="card-header">
+                                    <h3>Xu hướng thu chi</h3>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="incomeExpenseChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="report-card">
+                                <div class="card-header">
+                                    <h3>Phân bổ chi tiêu</h3>
+                                </div>
+                                <div class="chart-container">
+                                    <canvas id="categoryPieChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="report-card">
+                                <div class="card-header">
+                                    <h3>So sánh với tháng trước</h3>
+                                </div>
+                                <div class="comparison-list">
+                                    <div class="comparison-item">
+                                        <div class="comparison-category">
+                                            <i class="fas fa-utensils"></i>
+                                            <span>Ăn uống</span>
+                                        </div>
+                                        <div class="comparison-change positive">
+                                            <i class="fas fa-arrow-up"></i>
+                                            +12.5%
+                                        </div>
+                                    </div>
+                                    <!-- More comparison items... -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="banks" class="content-section">
+                        <div class="section-header">
+                            <h2>Liên kết ngân hàng</h2>
+                            <button class="btn btn-primary" onclick="showAddBank()">
+                                <i class="fas fa-plus"></i>
+                                Thêm ngân hàng
+                            </button>
+                        </div>
+
+                        <div class="banks-container">
+                            <div class="connected-banks">
+                                <h3>Tài khoản đã liên kết</h3>
+                                <div class="bank-list">
+                                    
+                                    
+                                </div>
+                            </div>
+
+                            <div class="available-banks">
+                                <h3>Ngân hàng & Ví điện tử hỗ trợ</h3>
+                                <div id="bankGrid" class="bank-grid"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="profile" class="content-section">
+                        <div class="section-header">
+                            <h2>Hồ sơ cá nhân</h2>
+                        </div>
+
+                        <div class="profile-container">
+                            <div class="profile-card">
+                                <div class="profile-avatar-section">
+                                    <div class="profile-avatar large">
+                                        <img src="https://via.placeholder.com/120" alt="Profile">
+                                    </div>
+                                    <button class="btn btn-outline" onclick="changeAvatar()">
+                                        <i class="fas fa-camera"></i>
+                                        Đổi ảnh
+                                    </button>
+                                </div>
+
+                                <form class="profile-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profile-name">Họ và tên</label>
+                                            <input type="text" id="profile-name" value="Nguyễn Văn A">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profile-email">Email</label>
+                                            <input type="email" id="profile-email" value="user@example.com">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profile-phone">Số điện thoại</label>
+                                            <input type="tel" id="profile-phone" value="+84 123 456 789">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profile-birthday">Ngày sinh</label>
+                                            <input type="date" id="profile-birthday" value="1990-01-01">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="profile-address">Địa chỉ</label>
+                                        <textarea id="profile-address" rows="3">123 Đường ABC, Quận 1, TP.HCM</textarea>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-outline">Hủy</button>
+                                        <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="security" class="content-section">
+                        <div class="section-header">
+                            <h2>Bảo mật</h2>
+                        </div>
+
+                        <div class="security-container">
+                            <div class="security-section">
+                                <h3>Đổi mật khẩu</h3>
+                                <form class="security-form">
+                                    <div class="form-group">
+                                        <label for="current-password">Mật khẩu hiện tại</label>
+                                        <input type="password" id="current-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-password">Mật khẩu mới</label>
+                                        <input type="password" id="new-password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-new-password">Xác nhận mật khẩu mới</label>
+                                        <input type="password" id="confirm-new-password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                </form>
+                            </div>
+
+                            <div class="security-section">
+                                <h3>Xác thực hai yếu tố (2FA)</h3>
+                                <div class="security-option">
+                                    <div class="option-info">
+                                        <div class="option-title">Xác thực qua SMS</div>
+                                        <div class="option-description">Nhận mã xác thực qua tin nhắn</div>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="security-option">
+                                    <div class="option-info">
+                                        <div class="option-title">Ứng dụng xác thực</div>
+                                        <div class="option-description">Sử dụng Google Authenticator hoặc tương tự</div>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="notifications" class="content-section">
+                        <div class="section-header">
+                            <h2>Thông báo</h2>
+                        </div>
+
+                        <div class="notifications-container">
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <div class="notification-title">Giao dịch mới</div>
+                                        <div class="notification-message">Bạn vừa thực hiện một giao dịch chi tiêu
+                                            250,000 ₫ tại Highlands Coffee.</div>
+                                        <div class="notification-date">Hôm nay, 10:45</div>
+                                    </div>
+                                    <button class="notification-action" onclick="markAsRead(this)">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </div>
+
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <div class="notification-title">Báo cáo hàng tuần</div>
+                                        <div class="notification-message">Báo cáo chi tiêu hàng tuần của bạn đã sẵn
+                                            sàng.</div>
+                                        <div class="notification-date">05/11/2024</div>
+                                    </div>
+                                    <button class="notification-action" onclick="deleteNotification(this)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-outline" onclick="markAllAsRead()">
+                                Đánh dấu tất cả là đã đọc
+                            </button>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đăng nhập</h2>
+                <button class="modal-close" onclick="closeModal('login-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mật khẩu</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Ghi nhớ đăng nhập
+                    </label>
+                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Đăng nhập</button>
+                <div class="auth-divider">
+                    <span>hoặc</span>
+                </div>
+                <button type="button" class="btn btn-google btn-full">
+                    <i class="fab fa-google"></i>
+                    Đăng nhập với Google
+                </button>
+                <p class="auth-switch">
+                    Chưa có tài khoản?
+                    <a href="#" onclick="switchToRegister()">Đăng ký ngay</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đăng ký</h2>
+                <button class="modal-close" onclick="closeModal('register-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="register-name">Họ và tên</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mật khẩu</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        Tôi đồng ý với <a href="#">Điều khoản sử dụng</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Đăng ký</button>
+                <div class="auth-divider">
+                    <span>hoặc</span>
+                </div>
+                <button type="button" class="btn btn-google btn-full">
+                    <i class="fab fa-google"></i>
+                    Đăng ký với Google
+                </button>
+                <p class="auth-switch">
+                    Đã có tài khoản?
+                    <a href="#" onclick="switchToLogin()">Đăng nhập</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quick Add Modal -->
+    <div id="quick-add-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm giao dịch nhanh</h2>
+                <button class="modal-close" onclick="closeModal('quick-add-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="transaction-form" onsubmit="handleQuickAdd(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quick-type">Loại giao dịch</label>
+                        <select id="quick-type" required>
+                            <option value="">Chọn loại</option>
+                            <option value="expense">Chi tiêu</option>
+                            <option value="income">Thu nhập</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quick-amount">Số tiền</label>
+                        <input type="number" id="quick-amount" placeholder="0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quick-category">Danh mục</label>
+                    <select id="quick-category" required>
+                        <option value="">Chọn danh mục</option>
+                        <option value="food">Ăn uống</option>
+                        <option value="transport">Đi lại</option>
+                        <option value="entertainment">Giải trí</option>
+                        <option value="shopping">Mua sắm</option>
+                        <option value="bills">Hóa đơn</option>
+                        <option value="health">Sức khỏe</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quick-description">Mô tả</label>
+                    <input type="text" id="quick-description" placeholder="Nhập mô tả giao dịch" required>
+                </div>
+                <div class="form-group">
+                    <label for="quick-date">Ngày</label>
+                    <input type="date" id="quick-date" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('quick-add-modal')">
+                        Hủy
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Thêm giao dịch
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="floating-add-btn" onclick="showQuickAdd()"
+        style="display: none; align-items: center;  justify-content: center;">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="bank.js"></script>
+
+</body>
+</html>

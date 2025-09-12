@@ -218,6 +218,7 @@ body::-webkit-scrollbar {
   background: var(--white);
   color: var(--gray-700);
   border: 1px solid var(--gray-300);
+  size: 0px;
 }
 
 .btn-google:hover:not(:disabled) {
@@ -475,28 +476,6 @@ body::-webkit-scrollbar {
 
 .auth-switch a:hover {
   text-decoration: underline;
-}
-
-/* Floating Action Button */
-.fab {
-  position: fixed;
-  bottom: var(--spacing-xl);
-  right: var(--spacing-xl);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--gradient-primary);
-  color: var(--white);
-  border: none;
-  box-shadow: var(--shadow-lg);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  z-index: 100;
-}
-
-.fab:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-xl);
 }
 
 /* Notifications */
@@ -1184,7 +1163,7 @@ body::-webkit-scrollbar {
   flex: 1;
   padding: var(--spacing-lg) 0;
   overflow-y: auto;
-  scrollbar-width: none;
+  -webkit-scrollbar: none;
 }
 
 .nav-section {
@@ -3068,7 +3047,7 @@ input:checked + .slider:before {
 /* Landscape Orientation */
 @media (orientation: landscape) and (max-height: 600px) {
   .hero {
-    min-height: auto;
+    min-height: 0;
     padding: var(--spacing-lg) var(--spacing-lg);
   }
 

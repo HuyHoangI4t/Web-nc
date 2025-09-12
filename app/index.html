@@ -42,8 +42,9 @@
                     <button class="btn btn-outline" onclick="showLogin()">Đăng nhập</button>
                     <button class="btn btn-primary" onclick="showRegister()">Đăng ký</button>
                 </div>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Mở menu di động">
                     <i class="fas fa-bars"></i>
+                    <span class="sr-only">Mở menu di động</span>
                 </button>
             </nav>
         </header>
@@ -255,7 +256,7 @@
                             <div class="user-name">Nguyễn Văn A</div>
                             <div class="user-email">user@example.com</div>
                         </div>
-                        <button class="user-menu-btn" onclick="toggleUserMenu()">
+                        <button class="user-menu-btn" onclick="toggleUserMenu()" aria-label="Mở menu người dùng" title="Mở menu người dùng">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
                     </div>
@@ -280,8 +281,9 @@
             <main class="main-content">
                 <header class="main-header">
                     <div class="header-left">
-                        <button class="mobile-sidebar-toggle" onclick="toggleSidebar()">
+                        <button class="mobile-sidebar-toggle" onclick="toggleSidebar()" title="Mở/đóng thanh bên" aria-label="Mở/đóng thanh bên">
                             <i class="fas fa-bars"></i>
+                            <span class="sr-only">Mở/đóng thanh bên</span>
                         </button>
                         <h1 class="page-title" id="page-title">Dashboard</h1>
                     </div>
@@ -294,7 +296,7 @@
                             <i class="fas fa-bell"></i>
                             <span class="notification-badge">3</span>
                         </button>
-                        <button class="header-btn" onclick="showQuickAdd()">
+                        <button class="header-btn" onclick="showQuickAdd()" title="Thêm giao dịch nhanh">
                             <i class="fas fa-plus"></i>
                         </button>
                         <div class="header-profile">
@@ -371,7 +373,7 @@
                                 <div class="card-header">
                                     <h3>Xu hướng chi tiêu</h3>
                                     <div class="card-actions">
-                                        <select class="period-select">
+                                        <select class="period-select" aria-label="Chọn khoảng thời gian">
                                             <option value="7d">7 ngày</option>
                                             <option value="30d" selected>30 ngày</option>
                                             <option value="90d">90 ngày</option>
@@ -588,7 +590,7 @@
                             <div class="section-actions">
                                 <div class="search-filter">
                                     <input type="text" placeholder="Tìm kiếm giao dịch..." class="search-input">
-                                    <select class="filter-select">
+                                    <select class="filter-select" aria-label="Lọc theo danh mục">
                                         <option value="">Tất cả danh mục</option>
                                         <option value="food">Ăn uống</option>
                                         <option value="transport">Đi lại</option>
@@ -611,9 +613,9 @@
                                     <button class="filter-tab" data-filter="income">Thu nhập</button>
                                 </div>
                                 <div class="date-range">
-                                    <input type="date" id="date-from" class="date-input">
+                                    <input type="date" id="date-from" class="date-input" placeholder="Từ ngày" title="Từ ngày">
                                     <span>đến</span>
-                                    <input type="date" id="date-to" class="date-input">
+                                    <input type="date" id="date-to" class="date-input" placeholder="Đến ngày" title="Đến ngày">
                                 </div>
                             </div>
 
@@ -636,11 +638,11 @@
                             </div>
 
                             <div class="pagination">
-                                <button class="btn btn-outline btn-sm" onclick="previousPage()">
+                                <button class="btn btn-outline btn-sm" onclick="previousPage()" title="Trang trước">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
                                 <span class="page-info">Trang 1 / 5</span>
-                                <button class="btn btn-outline btn-sm" onclick="nextPage()">
+                                <button class="btn btn-outline btn-sm" onclick="nextPage()" title="Trang sau">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -708,10 +710,10 @@
                                             </div>
                                         </div>
                                         <div class="budget-actions">
-                                            <button class="btn-icon" onclick="editBudget('food')">
+                                            <button class="btn-icon" onclick="editBudget('food')" title="Chỉnh sửa ngân sách Ăn uống">
                                                 <i class="fas fa-edit"></i>
                                             </button>
-                                            <button class="btn-icon delete" onclick="deleteBudget('food')">
+                                            <button class="btn-icon delete" onclick="deleteBudget('food')" title="Xóa ngân sách Ăn uống">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </div>
@@ -736,7 +738,7 @@
                         <div class="section-header">
                             <h2>Báo cáo tài chính</h2>
                             <div class="report-actions">
-                                <select class="period-select">
+                                <select class="period-select" aria-label="Chọn khoảng thời gian báo cáo">
                                     <option value="this-month">Tháng này</option>
                                     <option value="last-month">Tháng trước</option>
                                     <option value="this-quarter">Quý này</option>
@@ -899,8 +901,8 @@
                                         <div class="option-title">Xác thực qua SMS</div>
                                         <div class="option-description">Nhận mã xác thực qua tin nhắn</div>
                                     </div>
-                                    <label class="toggle">
-                                        <input type="checkbox" checked>
+                                    <label class="toggle" title="Bật/tắt xác thực qua SMS">
+                                        <input type="checkbox" checked title="Bật/tắt xác thực qua SMS">
                                         <span class="slider"></span>
                                     </label>
                                 </div>
@@ -911,7 +913,7 @@
                                         <div class="option-description">Sử dụng Google Authenticator hoặc tương tự</div>
                                     </div>
                                     <label class="toggle">
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="auth-app-2fa" title="Bật/tắt xác thực qua ứng dụng">
                                         <span class="slider"></span>
                                     </label>
                                 </div>
@@ -936,7 +938,7 @@
                                             250,000 ₫ tại Highlands Coffee.</div>
                                         <div class="notification-date">Hôm nay, 10:45</div>
                                     </div>
-                                    <button class="notification-action" onclick="markAsRead(this)">
+                                    <button class="notification-action" onclick="markAsRead(this)" title="Đánh dấu là đã đọc">
                                         <i class="fas fa-check"></i>
                                     </button>
                                 </div>
@@ -951,7 +953,7 @@
                                             sàng.</div>
                                         <div class="notification-date">05/11/2024</div>
                                     </div>
-                                    <button class="notification-action" onclick="deleteNotification(this)">
+                                    <button class="notification-action" onclick="deleteNotification(this)" title="Xóa thông báo">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </div>
@@ -973,7 +975,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Đăng nhập</h2>
-                <button class="modal-close" onclick="closeModal('login-modal')">
+                <button class="modal-close" onclick="closeModal('login-modal')" title="Đóng" aria-label="Đóng">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -998,8 +1000,7 @@
                 <div class="auth-divider">
                     <span>hoặc</span>
                 </div>
-                <!-- Cập nhật nút đăng nhập với Google -->
-                <button type="button" class="btn btn-google btn-full" id="google-login-btn" onclick="handleGoogleLogin()">
+                <button type="button" class="btn btn-google btn-full">
                     <i class="fab fa-google"></i>
                     Đăng nhập với Google
                 </button>
@@ -1015,7 +1016,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Đăng ký</h2>
-                <button class="modal-close" onclick="closeModal('register-modal')">
+                <button class="modal-close" onclick="closeModal('register-modal')" title="Đóng" aria-label="Đóng">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -1065,8 +1066,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Thêm giao dịch nhanh</h2>
-                <button class="modal-close" onclick="closeModal('quick-add-modal')">
+                <button class="modal-close" onclick="closeModal('quick-add-modal')" title="Đóng" aria-label="Đóng">
                     <i class="fas fa-times"></i>
+                    <span class="sr-only">Đóng</span>
                 </button>
             </div>
             <form class="transaction-form" onsubmit="handleQuickAdd(event)">

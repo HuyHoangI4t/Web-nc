@@ -1,12 +1,13 @@
-
 // Chặn bôi đen toàn trang
 document.addEventListener("selectstart", function(e) {
   e.preventDefault();
 });
 
-// Chặn caret nhấp nháy khi click vào phần tử không phải input/textarea
+// Chặn caret nhấp nháy khi click vào phần tử không phải input/textarea/ select
 document.addEventListener("mousedown", function(e) {
-  if (!(e.target instanceof HTMLInputElement) && !(e.target instanceof HTMLTextAreaElement)) {
+  if (!(e.target instanceof HTMLInputElement) &&
+      !(e.target instanceof HTMLTextAreaElement) &&
+      !(e.target instanceof HTMLSelectElement)) {
     e.preventDefault(); 
   }
 });
@@ -665,6 +666,50 @@ function loadGoalsPage() {
 
 function loadBanksPage() {
   console.log("loadBanksPage function is not implemented yet.")
+}
+
+// New function to handle Google login (used by both login and register modals)
+function handleGoogleLogin() {
+  google.accounts.id.initialize({
+    client_id: "908594978339-3dphku6que1ds8q9s6ml4lb3d3ojcs18.apps.googleusercontent.com", // Replace with your actual client ID
+    callback: handleGoogleCredentialResponse
+  });
+  google.accounts.id.prompt();
+}
+
+// Callback function when GIS returns a credential
+function handleGoogleCredentialResponse(response) {
+  if (response.credential) {
+    try {
+      const decoded = jwt_decode(response.credential);
+      const { name, email, picture } = decoded;
+      AppState.currentUser = {
+        id: Date.now(), // or use decoded.sub if available
+        name: name,
+        email: email,
+        avatar: picture || "https://via.placeholder.com/32",
+        createdAt: new Date().toISOString()
+      };
+      localStorage.setItem("financeApp_user", JSON.stringify(AppState.currentUser));
+      // Update sidebar user info
+      const userNameEl = document.querySelector('.user-info .user-name');
+      const userEmailEl = document.querySelector('.user-info .user-email');
+      if (userNameEl && userEmailEl) {
+        userNameEl.textContent = name;
+        userEmailEl.textContent = email;
+      }
+      // Close modal(s) and show dashboard
+      closeModal("login-modal");
+      closeModal("register-modal");
+      showDashboard();
+      showNotification("Đăng nhập thành công!", "success");
+    } catch (error) {
+      console.error("Error decoding Google token", error);
+      showNotification("Xác thực Google thất bại!", "error");
+    }
+  } else {
+    showNotification("Không nhận được thông tin từ Google!", "error");
+  }
 }
 
 

@@ -378,10 +378,11 @@ body::-webkit-scrollbar {
   visibility: visible;
 
 }
-
-.modal.active::-webkit-scrollbar { /* Chrome, Edge, Safari */
+/* .modal-content::-webkit-scrollbar
+.modal.active::-webkit-scrollbar { 
   display: none;
-}
+} */
+
 .modal-content {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -1420,13 +1421,14 @@ body::-webkit-scrollbar {
 
 .header-btn {
   position: relative;
-  
   border: none;
   color: var(--gray-500);
   cursor: pointer;
   padding: var(--spacing-sm);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
+  height: 30px;
+  width: 30px;
 }
 
 .header-btn:hover {
@@ -1436,10 +1438,10 @@ body::-webkit-scrollbar {
 
 .notification-badge {
   position: absolute;
-  top: 2px;
-  right: 2px;
-  background: var(--error);
-  color: var(--white);
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
   font-size: 10px;
   padding: 2px 6px;
   border-radius: 10px;

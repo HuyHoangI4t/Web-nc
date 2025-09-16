@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     initializeApp()
     hideLoadingScreen()
-  }, 500)
+  }, 100)
 })
 
 function initializeApp() {
@@ -437,22 +437,20 @@ function handleLogin(event) {
   }
 }
 
-function handleRegister(event) {
-    event.preventDefault();
-    const name = document.getElementById('register-name').value;
-    const email = document.getElementById('register-email').value;
-    
-    // (Có thể lưu vào localStorage nếu cần)
-    localStorage.setItem('userName', name);
-    localStorage.setItem('userEmail', email);
-    
-    // Cập nhật thông tin người dùng ở sidebar
-    document.querySelector('.user-info .user-name').textContent = name;
-    document.querySelector('.user-info .user-email').textContent = email;
-    
-    // Đóng modal đăng ký và hiển thị thông báo
-    closeModal('register-modal');
-    alert('Đăng ký thành công!');
+// thay thế/ghi đè vào script.js (thay thế hàm handleGoogleLogin hiện tại)
+let _gisInitialized = false;
+
+function handleGoogleLogin() {
+  if (!_gisInitialized) {
+    google.accounts.id.initialize({
+      client_id: "908594978339-3dphku6que1ds8q9s6ml4lb3d3ojcs18.apps.googleusercontent.com", // thay bằng Client ID của bạn nếu cần
+      callback: handleGoogleCredentialResponse,
+      ux_mode: 'popup' // 'popup' hoặc 'redirect' - dùng 'popup' cho trải nghiệm trong app
+    });
+    _gisInitialized = true;
+  }
+  // Gợi prompt One Tap / hoặc show button
+  google.accounts.id.prompt(); // gọi prompt để bật OneTap (nếu khả dụng)
 }
 
 function logout() {
@@ -711,8 +709,3 @@ function handleGoogleCredentialResponse(response) {
     showNotification("Không nhận được thông tin từ Google!", "error");
   }
 }
-
-
-
-
-

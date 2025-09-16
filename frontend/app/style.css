@@ -79,11 +79,12 @@ body {
   color: var(--gray-800);
   background-color: var(--gray-50);
   overflow-x: hidden;
-  
+
 }
-html::-webkit-scrollbar, 
+
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none;  
+  display: none;
 }
 
 /* Loading Screen */
@@ -134,10 +135,12 @@ body::-webkit-scrollbar {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
@@ -147,6 +150,7 @@ body::-webkit-scrollbar {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -372,17 +376,13 @@ body::-webkit-scrollbar {
   opacity: 0;
   visibility: hidden;
   transition: all var(--transition-normal);
+  overflow: hidden; /* ✅ Không cho modal sinh thanh cuộn */
 }
 
 .modal.active {
   opacity: 1;
   visibility: visible;
-
 }
-/* .modal-content::-webkit-scrollbar
-.modal.active::-webkit-scrollbar { 
-  display: none;
-} */
 
 .modal-content {
   background: var(--white);
@@ -390,10 +390,15 @@ body::-webkit-scrollbar {
   box-shadow: var(--shadow-xl);
   width: 90%;
   max-width: 500px;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-height: 90vh;       /* ✅ Giới hạn chiều cao */
+  overflow-y: auto;       /* ✅ Nội dung bên trong cuộn */
   transform: scale(0.9);
   transition: transform var(--transition-normal);
+}
+
+/* Ẩn scrollbar nhưng vẫn cuộn được */
+.modal-content::-webkit-scrollbar {
+  display: none;
 }
 
 .modal.active .modal-content {
@@ -428,6 +433,54 @@ body::-webkit-scrollbar {
 .modal-close:hover {
   background: var(--gray-100);
   color: var(--gray-700);
+}
+
+/* Auth Forms */
+.auth-form {
+  padding: var(--spacing-lg);
+}
+
+.auth-divider {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+  position: relative;
+  color: var(--gray-500);
+  font-size: var(--font-size-sm);
+}
+
+.auth-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gray-300);
+  z-index: 1;
+}
+
+.auth-divider span {
+  background: var(--white);
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+}
+
+.auth-switch a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
 }
 
 /* Auth Forms */
@@ -543,9 +596,11 @@ body::-webkit-scrollbar {
 .text-center {
   text-align: center;
 }
+
 .text-left {
   text-align: left;
 }
+
 .text-right {
   text-align: right;
 }
@@ -553,15 +608,19 @@ body::-webkit-scrollbar {
 .font-light {
   font-weight: 300;
 }
+
 .font-normal {
   font-weight: 400;
 }
+
 .font-medium {
   font-weight: 500;
 }
+
 .font-semibold {
   font-weight: 600;
 }
+
 .font-bold {
   font-weight: 700;
 }
@@ -569,24 +628,31 @@ body::-webkit-scrollbar {
 .text-xs {
   font-size: var(--font-size-xs);
 }
+
 .text-sm {
   font-size: var(--font-size-sm);
 }
+
 .text-base {
   font-size: var(--font-size-base);
 }
+
 .text-lg {
   font-size: var(--font-size-lg);
 }
+
 .text-xl {
   font-size: var(--font-size-xl);
 }
+
 .text-2xl {
   font-size: var(--font-size-2xl);
 }
+
 .text-3xl {
   font-size: var(--font-size-3xl);
 }
+
 .text-4xl {
   font-size: var(--font-size-4xl);
 }
@@ -594,24 +660,31 @@ body::-webkit-scrollbar {
 .text-primary {
   color: var(--primary-blue);
 }
+
 .text-success {
   color: var(--success);
 }
+
 .text-warning {
   color: var(--warning);
 }
+
 .text-error {
   color: var(--error);
 }
+
 .text-gray-500 {
   color: var(--gray-500);
 }
+
 .text-gray-600 {
   color: var(--gray-600);
 }
+
 .text-gray-700 {
   color: var(--gray-700);
 }
+
 .text-gray-800 {
   color: var(--gray-800);
 }
@@ -619,12 +692,15 @@ body::-webkit-scrollbar {
 .bg-primary {
   background-color: var(--primary-blue);
 }
+
 .bg-success {
   background-color: var(--success);
 }
+
 .bg-warning {
   background-color: var(--warning);
 }
+
 .bg-error {
   background-color: var(--error);
 }
@@ -632,6 +708,7 @@ body::-webkit-scrollbar {
 .hidden {
   display: none !important;
 }
+
 .visible {
   display: block !important;
 }
@@ -639,18 +716,23 @@ body::-webkit-scrollbar {
 .mb-0 {
   margin-bottom: 0;
 }
+
 .mb-1 {
   margin-bottom: var(--spacing-xs);
 }
+
 .mb-2 {
   margin-bottom: var(--spacing-sm);
 }
+
 .mb-3 {
   margin-bottom: var(--spacing-md);
 }
+
 .mb-4 {
   margin-bottom: var(--spacing-lg);
 }
+
 .mb-5 {
   margin-bottom: var(--spacing-xl);
 }
@@ -659,18 +741,23 @@ body::-webkit-scrollbar {
 .mt-0 {
   margin-top: 0;
 }
+
 .mt-1 {
   margin-top: var(--spacing-xs);
 }
+
 .mt-2 {
   margin-top: var(--spacing-sm);
 }
+
 .mt-3 {
   margin-top: var(--spacing-md);
 }
+
 .mt-4 {
   margin-top: var(--spacing-lg);
 }
+
 .mt-5 {
   margin-top: var(--spacing-xl);
 }
@@ -678,18 +765,23 @@ body::-webkit-scrollbar {
 .p-0 {
   padding: 0;
 }
+
 .p-1 {
   padding: var(--spacing-xs);
 }
+
 .p-2 {
   padding: var(--spacing-sm);
 }
+
 .p-3 {
   padding: var(--spacing-md);
 }
+
 .p-4 {
   padding: var(--spacing-lg);
 }
+
 .p-5 {
   padding: var(--spacing-xl);
 }
@@ -889,7 +981,7 @@ body::-webkit-scrollbar {
   clip-path: polygon(0 100%, 20% 80%, 40% 90%, 60% 70%, 80% 85%, 100% 60%, 100% 100%);
 }
 
-/* Features Section */
+
 .features {
   padding: var(--spacing-2xl) 0;
   background: var(--white);
@@ -1327,7 +1419,7 @@ body::-webkit-scrollbar {
   transition: margin-left var(--transition-normal);
 }
 
-.sidebar.collapsed + .main-content {
+.sidebar.collapsed+.main-content {
   margin-left: 80px;
 }
 
@@ -2274,93 +2366,211 @@ body::-webkit-scrollbar {
 }
 
 .bank-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.bank-item {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
+/* 🎴 Card Ngân hàng đã liên kết */
+.bank-card {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  border-radius: 16px;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #838383, #464647);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bank-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* 🎨 Gradient riêng cho từng ngân hàng */
+.bank-card.VCB {
+  background: linear-gradient(135deg, #009245, #006A4E);
+}
+
+/* Vietcombank */
+.bank-card.BIDV {
+  background: linear-gradient(135deg, #0033A1, #1E90FF);
+}
+
+/* BIDV */
+.bank-card.ICB {
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+}
+
+/* VietinBank */
+.bank-card.VBA {
+  background: linear-gradient(135deg, #8B0000, #B22222);
+}
+
+/* Agribank */
+.bank-card.TCB {
+  background: linear-gradient(135deg, #E30613, #3A3A3A);
+}
+
+/* Techcombank */
+.bank-card.ACB {
+  background: linear-gradient(135deg, #003E75, #4B79A1);
+}
+
+/* ACB */
+.bank-card.MB {
+  background: linear-gradient(135deg, #1D2088, #1cb5e0);
+}
+
+/* MB Bank */
+.bank-card.VPB {
+  background: linear-gradient(135deg, #00C853, #00945E);
+}
+
+/* VPBank */
+.bank-card.STB {
+  background: linear-gradient(135deg, #004E92, #000428);
+}
+
+/* Sacombank */
+.bank-card.SHB {
+  background: linear-gradient(135deg, #FF8C00, #FFD200);
+}
+
+/* SHB */
+.bank-card.HDB {
+  background: linear-gradient(135deg, #f12711, #f5af19);
+}
+
+/* HDBank */
+.bank-card.TPB {
+  background: linear-gradient(135deg, #8E2DE2, #FF6A00);
+}
+
+/* TPBank */
+.bank-card.VIB {
+  background: linear-gradient(135deg, #005BAC, #f7b733);
+}
+
+/* VIB */
+.bank-card.LPB {
+  background: linear-gradient(135deg, #0052A5, #FF8008);
+}
+
+/* LienVietPostBank */
+.bank-card.MSB {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+/* Maritime Bank */
+
+
+
+.bank-card .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bank-card .balance {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.bank-card .balance-amount {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* logo bank */
+.bank-card .bank-logo {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* card middle */
+.bank-card .card-middle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.bank-card .card-middle div strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+/* card bottom */
+.bank-card .card-bottom {
+  margin-top: 14px;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.bank-item.connected {
-  border-left: 4px solid var(--success);
+.bank-card .unlink-btn {
+  background: rgba(255, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
 }
 
-.bank-info {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
+.bank-card .unlink-btn:hover {
+  background: red;
 }
 
-.bank-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-
-.bank-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bank-name {
-  font-weight: 600;
-  color: var(--gray-900);
-  margin-bottom: var(--spacing-xs);
-}
-
-.account-number {
-  font-size: var(--font-size-sm);
-  color: var(--gray-500);
-  margin-bottom: var(--spacing-xs);
-}
-
-.account-balance {
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  color: var(--primary-blue);
-}
-
-.bank-actions {
-  display: flex;
-  gap: var(--spacing-sm);
-}
+/* 🔹 Logo ngân hàng hỗ trợ (grid dưới) */
 .bank-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* mỗi logo 1 ô ngang */
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
 }
 
 .bank-option {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  padding: 10px;
   background: #fff;
-  border: 1px dashed #007bff; 
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  border: 1px solid #eee;
 }
 
 .bank-option:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
 }
 
 .bank-option img {
-  max-width: 100%;    /* ảnh theo chiều ngang */
-  max-height: 40px;   /* hạn chế chiều cao để đều nhau */
-  object-fit: contain; /* không méo ảnh */
+  max-width: 100%;
+  max-height: 38px;
+  object-fit: contain;
 }
 
 .bank-option span {
@@ -2498,11 +2708,11 @@ body::-webkit-scrollbar {
   border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--primary-blue);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   transform: translateX(26px);
 }
 
@@ -2900,7 +3110,8 @@ input:checked + .slider:before {
 }
 
 /* High DPI Displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .preview-chart::before {
     transform: scale(0.5);
     transform-origin: top left;
@@ -2909,6 +3120,7 @@ input:checked + .slider:before {
 
 /* Print Styles */
 @media print {
+
   .sidebar,
   .main-header,
   .fab,
@@ -2938,6 +3150,7 @@ input:checked + .slider:before {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

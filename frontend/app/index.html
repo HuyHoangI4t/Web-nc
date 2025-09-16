@@ -809,7 +809,7 @@
                             </div>
 
                             <div class="available-banks">
-                                <h3>Ngân hàng & Ví điện tử hỗ trợ</h3>
+                                <h3>Ngân hàng hỗ trợ</h3>
                                 <div id="bankGrid" class="bank-grid"></div>
                             </div>
                         </div>
@@ -851,13 +851,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="profile-birthday">Ngày sinh</label>
-                                            <input type="date" id="profile-birthday" value="1990-01-01">
+                                            <input type="date" id="profile-birthday" value="2005-01-01">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="profile-address">Địa chỉ</label>
-                                        <textarea id="profile-address" rows="3">123 Đường ABC, Quận 1, TP.HCM</textarea>
+                                        <textarea id="profile-address" rows="3">Lê Duẩn, Buôn Ma Thuột</textarea>
                                     </div>
 
                                     <div class="form-actions">
@@ -1001,8 +1001,8 @@
                     <span>hoặc</span>
                 </div>
                 <button type="button" class="btn btn-google btn-full">
-                    <i class="fab fa-google"></i>
-                    Đăng nhập với Google
+                    <div id="google-btn-login"></div>
+
                 </button>
                 <p class="auth-switch">
                     Chưa có tài khoản?
@@ -1041,7 +1041,7 @@
                     <label class="checkbox">
                         <input type="checkbox" required>
                         <span class="checkmark"></span>
-                        Tôi đồng ý với <a href="#">Điều khoản sử dụng</a>
+                        Tôi đồng ý với <a href="#"> Điều khoản sử dụng</a>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-full">Đăng ký</button>
@@ -1050,8 +1050,8 @@
                 </div>
                 <!-- ADD: Button for Google registration -->
                 <button type="button" class="btn btn-google btn-full" onclick="handleGoogleLogin()">
-                    <i class="fab fa-google"></i>
-                    Đăng ký với Google
+                    <div id="google-btn-register"></div>
+
                 </button>
                 <p class="auth-switch">
                     Đã có tài khoản?
